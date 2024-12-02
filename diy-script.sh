@@ -122,5 +122,14 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
+pppoe_username="02203182314"
+pppoe_password="182314"
+if [ -n "$pppoe_username" -a "$pppoe_password" ]; then
+  uci set network.wan.proto=pppoe
+  uci set network.wan.username="$pppoe_username"
+  uci set network.wan.password="$pppoe_password"
+  uci commit network
+fi
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
