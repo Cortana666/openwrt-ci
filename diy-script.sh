@@ -18,6 +18,7 @@ rm -rf feeds/luci/themes/luci-theme-netgear
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-serverchan
+rm -rf feeds/packages/net/open-app-filter
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
