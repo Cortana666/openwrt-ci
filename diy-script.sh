@@ -40,6 +40,8 @@ cp -r /tmp/OpenAppFilter/kmod package/kmod-oaf
 cp -r /tmp/OpenAppFilter/oaf package/appfilter
 cp -r /tmp/OpenAppFilter/luci package/luci-app-oaf
 rm -rf /tmp/OpenAppFilter
+find package/kmod-oaf/ package/appfilter/ package/luci-app-oaf/ -type f -name "Makefile" | xargs sed -i 's/-Werror//g' 2>/dev/null || true
+find package/kmod-oaf/ package/appfilter/ -type f -name "Makefile" | xargs sed -i 's/EXTRA_CFLAGS +=/EXTRA_CFLAGS += -Wno-error -Wno-missing-prototypes -Wno-unused-variable/g' 2>/dev/null || true
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
 git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
 git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
