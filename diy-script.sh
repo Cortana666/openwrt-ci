@@ -37,9 +37,9 @@ git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter /tmp/OpenAppFilter
-cp -r /tmp/OpenAppFilter/kmod package/kmod-oaf
-cp -r /tmp/OpenAppFilter/oaf package/appfilter
-cp -r /tmp/OpenAppFilter/luci package/luci-app-oaf
+cp -r /tmp/OpenAppFilter/oaf package/kmod-oaf
+cp -r /tmp/OpenAppFilter/open-app-filter package/appfilter
+cp -r /tmp/OpenAppFilter/luci-app-oaf package/luci-app-oaf
 rm -rf /tmp/OpenAppFilter
 find package/kmod-oaf/ package/appfilter/ package/luci-app-oaf/ -type f -name "Makefile" | xargs sed -i 's/-Werror//g' 2>/dev/null || true
 find package/kmod-oaf/ package/appfilter/ -type f -name "Makefile" | xargs sed -i 's/EXTRA_CFLAGS +=/EXTRA_CFLAGS += -Wno-error -Wno-missing-prototypes -Wno-unused-variable/g' 2>/dev/null || true
