@@ -9,5 +9,5 @@ chmod +x package/luci-app-athena-led/root/etc/init.d/athena_led package/luci-app
 # rm -rf feeds/packages/net/open-app-filter
 # git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 
-git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/luci-app-passwall2
-git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
+#git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/luci-app-passwall2
+#git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
